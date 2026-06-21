@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day Nannagaru ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #C0392B;
+    --crimson-deep: #922B21;
+    --crimson-light: #E74C3C;
+    --rose: #E8637D;
+    --blush: #FDECEF;
+    --white: #FFFFFF;
+    --ivory: #FFF8F8;
+    --gold: #C9A84C;
+    --gold-light: #F5D98B;
+    --text-dark: #2C0A0A;
+    --text-mid: #5C2020;
+    --text-soft: #8B3A3A;
+    --glass-bg: rgba(255,255,255,0.15);
+    --glass-border: rgba(255,255,255,0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ivory);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* LOADING SCREEN */
+  #loading {
+    position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(135deg, #C0392B 0%, #922B21 50%, #7B241C 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #loading.hide { opacity: 0; visibility: hidden; }
+  .loading-heart {
+    font-size: 4rem; animation: heartbeat 1s ease-in-out infinite;
+  }
+  .loading-text {
+    font-family: 'Dancing Script', cursive; color: white; font-size: 1.5rem;
+    margin-top: 1rem; letter-spacing: 2px; opacity: 0.9;
+  }
+  .loading-bar {
+    width: 200px; height: 3px; background: rgba(255,255,255,0.2);
+    border-radius: 2px; margin-top: 2rem; overflow: hidden;
+  }
+  .loading-bar-fill {
+    height: 100%; background: white; width: 0;
+    animation: loadfill 2s ease forwards;
+  }
+  @keyframes loadfill { to { width: 100%; } }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+    box-shadow: 0 2px 30px rgba(192,57,43,0.15);
+    padding: 0.7rem 2rem;
+  }
+  .nav-logo {
+    font-family: 'Dancing Script', cursive; color: white; font-size: 1.5rem;
+    font-weight: 700; text-decoration: none; transition: color 0.4s;
+  }
+  nav.scrolled .nav-logo { color: var(--crimson); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.85rem;
+    font-weight: 500; letter-spacing: 0.5px; transition: all 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+    height: 2px; background: white; transform: scaleX(0); transition: transform 0.3s;
+  }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  nav.scrolled .nav-links a { color: var(--text-dark); }
+  nav.scrolled .nav-links a::after { background: var(--crimson); }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { width: 25px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+  nav.scrolled .hamburger span { background: var(--crimson); }
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; background: rgba(192,57,43,0.97);
+    backdrop-filter: blur(20px); z-index: 999;
+    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: white; font-family: 'Playfair Display', serif; font-size: 2rem;
+    text-decoration: none; transition: opacity 0.3s;
+  }
+  .mobile-menu a:hover { opacity: 0.7; }
+  .close-menu { position: absolute; top: 2rem; right: 2rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; }
+
+  /* HERO */
+#hero{
+    position:relative;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.45)
+    ),
+    url("p.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+body.dark #hero{
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.75)
+    ),
+    url("p.jpeg");
+}
+body.dark{
+    background:#0a0a0a;
+    color:#ffffff;
+}
+body.dark #letter{
+    background:linear-gradient(135deg,#2C0A0A 0%,#1A0505 100%);
+}
+
+body.dark #gallery{
+    background:linear-gradient(135deg,#2C0A0A 0%,#1A0505 100%);
+}
+
+body.dark #timeline{
+    background:linear-gradient(135deg,#2C0A0A 0%,#1A0505 100%);
+}
+
+body.dark #hero-cards,
+body.dark #flip-cards,
+body.dark #surprise{
+    background:#1A0505;
+}
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      linear-gradient(to bottom, rgba(146,43,33,0.65) 0%, rgba(192,57,43,0.5) 40%, rgba(100,20,15,0.75) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect width="400" height="400" fill="%23C0392B"/><circle cx="200" cy="180" r="140" fill="%23922B21" opacity="0.6"/><text x="200" y="220" text-anchor="middle" font-size="80" fill="%23FDECEF" opacity="0.15">❤️</text></svg>');
+    background-size: cover; background-position: center;
+    transform: scale(1.05);
+    animation: kenburns 20s ease-in-out infinite alternate;
+  }
+  /* Photo upload placeholder */
+  .hero-photo-hint {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #C0392B 0%, #7B241C 40%, #2C0A0A 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  @keyframes kenburns { from { transform: scale(1.05) translateX(-1%); } to { transform: scale(1.12) translateX(1%); } }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(146,43,33,0.3) 50%, rgba(0,0,0,0.5) 100%);
+  }
+  /* Floating petals */
+  .petal {
+    position: absolute; width: 12px; height: 12px; border-radius: 50% 0 50% 0;
+    background: rgba(255,200,200,0.4); animation: float-petal linear infinite;
+    pointer-events: none;
+  }
+  @keyframes float-petal {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  }
+  .hero-content {
+    position: relative; z-index: 2; text-align: center; color: white;
+    padding: 2rem; max-width: 900px;
+    animation: fadeInUp 1.2s ease forwards; opacity: 0;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-family: 'Dancing Script', cursive; font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: #FFD4D4; letter-spacing: 2px; margin-bottom: 1rem;
+    animation: fadeInUp 1.2s ease 0.3s forwards; opacity: 0;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 900; line-height: 1.05;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #fff 0%, #FFD4D4 50%, #F5D98B 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1.2s ease 0.5s forwards; opacity: 0;
+    margin-bottom: 1.2rem;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic; color: rgba(255,255,255,0.88); letter-spacing: 1px;
+    animation: fadeInUp 1.2s ease 0.7s forwards; opacity: 0;
+    margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .hero-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: white; color: var(--crimson);
+    padding: 1rem 2.5rem; border-radius: 50px;
+    font-weight: 600; font-size: 1rem; letter-spacing: 0.5px;
+    text-decoration: none; border: none; cursor: pointer;
+    box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 8px 30px rgba(0,0,0,0.2);
+    animation: fadeInUp 1.2s ease 0.9s forwards, glow-btn 3s ease-in-out infinite;
+    opacity: 0; transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hero-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 60px rgba(255,255,255,0.6), 0 12px 40px rgba(0,0,0,0.25); }
+  @keyframes glow-btn {
+    0%,100% { box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 8px 30px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 0 70px rgba(255,255,255,0.7), 0 8px 30px rgba(0,0,0,0.2); }
+  }
+  .scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    animation: bounce 2s ease-in-out infinite; color: rgba(255,255,255,0.7); font-size: 1.5rem;
+  }
+  @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+  /* PHOTO PLACEHOLDER DECORATION */
+  .hero-photo-area{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.45)
+    ),
+    url("p.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+  .photo-placeholder {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #8B1A10 0%, #C0392B 30%, #7B241C 70%, #2C0A0A 100%);
+  }
+  .hero-photo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    border:6px solid rgba(255,255,255,0.9);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    z-index:2;
+}
+body.dark #hero{
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.75)
+    ),
+    url("p.jpeg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+  .photo-placeholder-icon { font-size: 6rem; opacity: 0.15; }
+  .photo-instruction img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+}
+body.dark section{
+    background:#121212 !important;
+}
+body.dark .letter-body,
+body.dark .letter-date,
+body.dark .letter-dear{
+    color:#FFE4E4;
+}
+body.dark .card-desc{
+    color:#FFCCCC;
+}
+body.dark .tl-desc{
+    color:#FFCCCC;
+}
+body.dark .reveal-sub{
+    color:#FFE4E4;
+}
+  /* SECTIONS */
+  section { padding: 5rem 1.5rem; }
+  .section-label {
+    font-family: 'Dancing Script', cursive; color: var(--crimson); font-size: 1.2rem;
+    text-align: center; margin-bottom: 0.5rem; letter-spacing: 1px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700; text-align: center; color: var(--text-dark);
+    margin-bottom: 1rem; line-height: 1.2;
+  }
+  .section-divider {
+    width: 80px; height: 3px;
+    background: linear-gradient(to right, var(--crimson), var(--gold));
+    margin: 0.8rem auto 3rem; border-radius: 3px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* SECTION 2 – LETTER */
+  #letter { background: linear-gradient(135deg, #FFF0EE 0%, var(--ivory) 100%); }
+  .letter-card {
+    max-width: 750px; margin: 0 auto;
+    background: white; border-radius: 20px;
+    padding: 3.5rem; position: relative;
+    box-shadow: 0 20px 80px rgba(192,57,43,0.12), 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(192,57,43,0.1);
+    overflow: hidden;
+  }
+  .letter-card::before {
+    content: '❝'; position: absolute; top: 1rem; left: 1.5rem;
+    font-size: 6rem; color: rgba(192,57,43,0.08); font-family: serif; line-height: 1;
+  }
+  .letter-decoration {
+    position: absolute; right: -20px; top: -20px; width: 100px; height: 100px;
+    background: radial-gradient(circle, rgba(192,57,43,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .letter-date {
+    font-family: 'Dancing Script', cursive; color: var(--text-soft);
+    font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.8;
+  }
+  .letter-dear {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic;
+    color: var(--crimson); margin-bottom: 1.2rem; font-weight: 600;
+  }
+  .letter-body {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.9;
+    color: var(--text-mid); position: relative; z-index: 1;
+  }
+  .letter-body p { margin-bottom: 1rem; }
+  .letter-sign {
+    font-family: 'Dancing Script', cursive; color: var(--crimson);
+    font-size: 1.6rem; font-weight: 600; margin-top: 1.5rem;
+  }
+  .letter-lines {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+  }
+  .letter-line {
+    position: absolute; left: 4rem; right: 3rem; height: 1px;
+    background: rgba(192,57,43,0.06);
+  }
+
+  /* SECTION 3 – WHY HERO */
+  #hero-cards { background: white; }
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem; margin-top: 1rem;
+  }
+  .hero-card {
+    background: linear-gradient(135deg, var(--ivory) 0%, #FFF0EE 100%);
+    border-radius: 20px; padding: 2rem 1.5rem; text-align: center;
+    border: 1px solid rgba(192,57,43,0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default; position: relative; overflow: hidden;
+  }
+  .hero-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+    opacity: 0; transition: opacity 0.4s ease; border-radius: 20px;
+  }
+  .hero-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(192,57,43,0.2); }
+  .hero-card:hover::after { opacity: 1; }
+  .hero-card:hover .card-icon, .hero-card:hover .card-title, .hero-card:hover .card-desc { color: white; position: relative; z-index: 1; }
+  .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; transition: all 0.3s; position: relative; z-index: 1; }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; position: relative; z-index: 1; transition: color 0.3s; }
+  .card-desc { font-size: 0.85rem; color: var(--text-soft); line-height: 1.5; position: relative; z-index: 1; transition: color 0.3s; }
+
+  /* SECTION 4 – GALLERY */
+  #gallery { background: linear-gradient(135deg, #FFF0EE 0%, var(--ivory) 100%); }
+  .gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:20px;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.gallery-item{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    aspect-ratio:1/1;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    display:block;
+}
+.contain-img{
+
+    object-fit:contain;
+
+    background:#f8f3f3; /* fills empty space */
+
+}
+
+/* 2,5,6 */
+
+.cover-img{
+
+    object-fit:cover;
+
+}
+  .gallery-item:nth-child(3n+2) { aspect-ratio: 1/1.2; }
+  .gallery-item:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(192,57,43,0.25); }
+  .gallery-placeholder {
+    width: 100%; height: 100%; background: linear-gradient(135deg, #E74C3C 0%, #C0392B 50%, #922B21 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 1px; text-align: center; padding: 1rem;
+  }
+  .gallery-placeholder span { font-size: 2.5rem; opacity: 0.5; }
+  .gallery-item .overlay {
+    position: absolute; inset: 0; background: linear-gradient(to top, rgba(192,57,43,0.9) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem;
+  }
+  
+.gallery-item:hover img{
+    transform:scale(1.05);
+}
+  .gallery-item:hover .overlay { opacity: 1; }
+  .gallery-item .overlay p { color: white; font-family: 'Dancing Script', cursive; font-size: 1rem; }
+  /* Lightbox */
+  #lightbox {
+    display: none; position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+  }
+  #lightbox.show { display: flex; }
+  #lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; }
+
+  /* SECTION 5 – FLIP CARDS */
+  #flip-cards { background: white; }
+  .flip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .flip-container { height: 200px; perspective: 1000px; cursor: pointer; }
+  .flip-inner {
+    width: 100%; height: 100%; position: relative;
+    transform-style: preserve-3d; transition: transform 0.7s ease;
+  }
+  .flip-container:hover .flip-inner, .flip-container.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-front, .flip-back {
+    position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px;
+    display: flex; align-items: center; justify-content: center; padding: 2rem;
+    text-align: center;
+  }
+  .flip-front {
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+    box-shadow: 0 8px 30px rgba(192,57,43,0.3);
+  }
+  .flip-front .front-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+  .flip-front .front-hint { color: rgba(255,255,255,0.7); font-size: 0.8rem; letter-spacing: 1px; }
+  .flip-back {
+    background: white; transform: rotateY(180deg);
+    border: 2px solid rgba(192,57,43,0.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .flip-back p {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--text-dark); line-height: 1.6;
+  }
+
+  /* SECTION 6 – TIMELINE */
+  #timeline { background: linear-gradient(135deg, #FFF0EE 0%, var(--ivory) 100%); }
+  .timeline { position: relative; max-width: 700px; margin: 0 auto; }
+  .timeline::before {
+    content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--crimson), var(--gold), var(--crimson));
+    transform: translateX(-50%);
+  }
+  .tl-item { display: flex; margin-bottom: 3rem; position: relative; align-items: flex-start; }
+  .tl-item:nth-child(odd) { flex-direction: row-reverse; }
+  .tl-content {
+    width: 45%; background: white; border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 1px solid rgba(192,57,43,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tl-content:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(192,57,43,0.15); }
+  .tl-item:nth-child(odd) .tl-content { margin-right: 10%; }
+  .tl-item:nth-child(even) .tl-content { margin-left: 10%; }
+  .tl-dot {
+    position: absolute; left: 50%; top: 1.2rem; transform: translate(-50%,-50%);
+    width: 40px; height: 40px; background: linear-gradient(135deg, var(--crimson), var(--gold));
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; box-shadow: 0 0 0 4px white, 0 0 0 6px var(--crimson);
+    z-index: 1;
+  }
+  .tl-year { font-family: 'Dancing Script', cursive; color: var(--crimson); font-size: 1rem; margin-bottom: 0.4rem; }
+  .tl-heading { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .tl-desc { font-size: 0.85rem; color: var(--text-soft); line-height: 1.5; }
+
+  /* SECTION 7 – SPECIAL MESSAGE */
+  #special-message {
+    background: linear-gradient(135deg, var(--crimson-deep) 0%, var(--crimson) 50%, #E74C3C 100%);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  #special-message::before {
+    content: '❝'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%);
+    font-size: 20rem; color: rgba(255,255,255,0.04); font-family: serif; line-height: 1; pointer-events: none;
+  }
+  .special-quote {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+    font-style: italic; color: white; max-width: 800px; margin: 0 auto;
+    line-height: 1.6; text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    position: relative; z-index: 1;
+  }
+  .special-author { font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.75); font-size: 1.2rem; margin-top: 1.5rem; }
+
+  /* SECTION 8 – SURPRISE */
+  #surprise { background: white; text-align: center; }
+  .surprise-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--crimson);
+    padding: 1.1rem 3rem; border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600;
+    border: 1.5px solid var(--crimson); cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+    position: relative; overflow: hidden;
+  }
+  .surprise-btn::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease; border-radius: 50px;
+  }
+  .surprise-btn:hover { color: white; border-color: transparent; box-shadow: 0 8px 40px rgba(192,57,43,0.3); }
+  .surprise-btn:hover::before { transform: scaleX(1); }
+  .surprise-btn span { position: relative; z-index: 1; }
+  .surprise-btn:hover span { color: white; }
+
+  #surprise-msg {
+    display: none; margin-top: 0; position: relative;
+  }
+  #surprise-msg.show { display: block; }
+
+  /* Petal canvas */
+  #petal-canvas {
+    position: fixed; inset: 0; width: 100vw; height: 100vh;
+    pointer-events: none; z-index: 9990;
+  }
+
+  /* Bloom rings */
+  .bloom-ring {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%; pointer-events: none; z-index: 9989;
+    opacity: 0;
+  }
+  #bloom1 { width: 100vmax; height: 100vmax; background: radial-gradient(circle, rgba(192,57,43,0.13) 0%, transparent 65%); }
+  #bloom2 { width: 70vmax; height: 70vmax; background: radial-gradient(circle, rgba(201,168,76,0.09) 0%, transparent 60%); }
+  #bloom3 { width: 40vmax; height: 40vmax; background: radial-gradient(circle, rgba(255,230,220,0.18) 0%, transparent 60%); }
+
+  /* Reveal card */
+  .reveal-card {
+    max-width: 620px; margin: 4rem auto 0;
+    padding: 3.5rem 3rem; text-align: center;
+    background: white; border-radius: 24px;
+    border: 1px solid rgba(192,57,43,0.12);
+    box-shadow: 0 30px 80px rgba(192,57,43,0.1), 0 4px 20px rgba(0,0,0,0.04);
+    opacity: 1; transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-card.in { opacity: 1; transform: translateY(0); }
+  .reveal-ornament {
+    font-family: 'Cormorant Garamond', serif; color: var(--gold);
+    font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 1.5rem; opacity: 0.8;
+  }
+  .reveal-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.8rem); font-weight: 900; line-height: 1.1;
+    background: linear-gradient(135deg, var(--crimson-deep) 0%, var(--crimson) 50%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+  .reveal-sub {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--text-mid);
+    line-height: 1.8; max-width: 460px; margin: 0 auto 1.5rem;
+  }
+  .reveal-signature {
+    font-family: 'Dancing Script', cursive; color: var(--crimson);
+    font-size: 1.6rem; font-weight: 600; margin-top: 0.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: linear-gradient(135deg, #2C0A0A 0%, #1A0505 100%);
+    padding: 3rem 1.5rem; text-align: center; color: rgba(255,255,255,0.85);
+  }
+  .footer-love {
+    font-family: 'Dancing Script', cursive; font-size: 1.5rem;
+    color: white; margin-bottom: 0.5rem;
+  }
+  .footer-sub { font-size: 0.85rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+  /* BACK TO TOP */
+  #back-top {
+    position: fixed; bottom: 2rem; right: 1.5rem; z-index: 800;
+    width: 45px; height: 45px; background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+    color: white; border: none; border-radius: 50%; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(192,57,43,0.4); font-size: 1.2rem;
+    opacity: 0; transition: all 0.3s; display: flex; align-items: center; justify-content: center;
+  }
+  #back-top.show { opacity: 1; }
+  #back-top:hover { transform: translateY(-3px); }
+
+  /* DARK MODE */
+  body.dark { background: #1A0505; color: #FFE4E4; }
+  body.dark .section-title { color: #FFE4E4; }
+  body.dark #letter { background: linear-gradient(135deg, #2C0A0A 0%, #1A0505 100%); }
+  body.dark .letter-card { background: #2C0A0A; border-color: rgba(192,57,43,0.2); }
+  body.dark #hero-cards { background: #1A0505; }
+  body.dark .hero-card { background: linear-gradient(135deg, #2C0A0A 0%, #3D1010 100%); border-color: rgba(192,57,43,0.15); }
+  body.dark .card-title { color: #FFE4E4; }
+  body.dark #flip-cards { background: #1A0505; }
+  body.dark .flip-back { background: #2C0A0A; border-color: rgba(192,57,43,0.2); }
+  body.dark .flip-back p { color: #FFD4D4; }
+  body.dark #timeline { background: linear-gradient(135deg, #2C0A0A 0%, #1A0505 100%); }
+  body.dark .tl-content { background: #2C0A0A; border-color: rgba(192,57,43,0.2); }
+  body.dark .tl-heading { color: #FFD4D4; }
+  body.dark #surprise { background: #1A0505; }
+  body.dark #gallery { background: linear-gradient(135deg, #2C0A0A 0%, #1A0505 100%); }
+
+  /* DARK TOGGLE */
+  #dark-toggle {
+    position: fixed; top: 5rem; right: 1.5rem; z-index: 800;
+    width: 40px; height: 40px; background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+    color: white; border-radius: 50%; cursor: pointer; font-size: 1.1rem;
+    transition: all 0.3s; display: flex; align-items: center; justify-content: center;
+  }
+  #dark-toggle:hover { background: rgba(255,255,255,0.25); transform: rotate(20deg); }
+
+  /* SCROLL ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* TYPEWRITER */
+  .typewriter { overflow: hidden; border-right: 2px solid var(--crimson); white-space: nowrap; animation: typing 3.5s steps(40,end), blink 0.75s step-end infinite; }
+  @keyframes typing { from { width: 0; } to { width: 100%; } }
+  @keyframes blink { 50% { border-color: transparent; } }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .timeline::before { left: 20px; }
+    .tl-item, .tl-item:nth-child(odd) { flex-direction: column; }
+    .tl-content, .tl-item:nth-child(odd) .tl-content { width: 90%; margin-left: 50px !important; margin-right: 0 !important; }
+    .tl-dot { left: 20px; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .flip-grid { grid-template-columns: 1fr 1fr; }
+    .letter-card { padding: 2rem 1.5rem; }
+    section { padding: 4rem 1.2rem; }
+  }
+  @media (max-width: 480px) {
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    .flip-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <div class="loading-heart">❤️</div>
+  <div class="loading-text">Loading something special...</div>
+  <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+</div>
+
+<!-- DARK MODE TOGGLE -->
+<button id="dark-toggle" title="Toggle Dark Mode">🌙</button>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">Nannagaru ❤️</a>
+  <ul class="nav-links">
+    <li><a href="#letter">Letter</a></li>
+    <li><a href="#hero-cards">My Hero</a></li>
+    <li><a href="#gallery">Memories</a></li>
+    <li><a href="#timeline">Journey</a></li>
+    <li><a href="#surprise">Surprise</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="close-menu" id="close-menu">✕</button>
+  <a href="#letter" onclick="closeMob()">Letter</a>
+  <a href="#hero-cards" onclick="closeMob()">My Hero</a>
+  <a href="#gallery" onclick="closeMob()">Memories</a>
+  <a href="#flip-cards" onclick="closeMob()">My Heart</a>
+  <a href="#timeline" onclick="closeMob()">Journey</a>
+  <a href="#surprise" onclick="closeMob()">Surprise ❤️</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close">✕</button>
+  <div style="max-width:90vw;max-height:90vh;border-radius:12px;overflow:hidden;background:#2C0A0A;padding:2rem;text-align:center;">
+    <p style="font-family:'Dancing Script',cursive;color:#FFD4D4;font-size:1.2rem;" id="lb-text">A beautiful memory ❤️</p>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  
+  <div class="hero-overlay"></div>
+  <!-- Petals -->
+  <div id="petals"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">With Lots of Love ❤️</p>
+    <h1 class="hero-title">HAPPY FATHER'S DAY<br>NANNAGARU</h1>
+    <p class="hero-sub">My First Hero, My Greatest Strength, My Forever Inspiration.</p>
+    <button class="hero-btn" onclick="scrollToLetter()">Open My Heart ❤️</button>
+  </div>
+  <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- LETTER -->
+<section id="letter">
+  <div class="container">
+    <p class="section-label reveal">From My Heart</p>
+    <h2 class="section-title reveal">A Letter To My Dad</h2>
+    <div class="section-divider reveal"></div>
+    <div class="letter-card reveal">
+      <div class="letter-decoration"></div>
+      <div class="letter-lines" id="letter-lines"></div>
+      <p class="letter-date">Father's Day, June 2026</p>
+      <p class="letter-dear">Dear Nannagaru,</p>
+      <div class="letter-body">
+       <p>
+నాన్నగారు, మన కుటుంబం కోసం మీరు చేసిన త్యాగాలు ఎప్పటికీ మరచిపోలేనివి. 
+మేము తిన్న ప్రతి అన్నం మెతుకులో మీ కష్టం ఉంది, మీ చెమట ఉంది, మీ ప్రేమ ఉంది. 
+మేము సంతోషంగా ఉండాలని, ఎలాంటి లోటు లేకుండా జీవించాలని మీరు ఎన్నో కష్టాలను భరించారు. 
+మా ముఖాల్లో చిరునవ్వు చూడటానికి మీరు మీ అలసటను, మీ బాధలను, మీ కోరికలను కూడా ఎన్నోసార్లు పక్కన పెట్టారు.
+</p>
+<p>
+మేము ధరించిన ప్రతి బట్టలో, మేము చదివిన ప్రతి పుస్తకంలో, మేము సాధించిన ప్రతి విజయానికి వెనుక మీ శ్రమ దాగి ఉంది. 
+మన కుటుంబం బాగుండాలని మీరు రాత్రింబవళ్లు కష్టపడి పనిచేశారు. 
+మాకు మంచి భవిష్యత్తు ఇవ్వడానికి మీరు చేసిన ప్రతి త్యాగం మా జీవితాలకు బలమైన పునాది అయింది.
+</p>
+<p>
+ఈ రోజు మేము సంతోషంగా, ధైర్యంగా, ఆత్మవిశ్వాసంతో నిలబడగలుగుతున్నామంటే దానికి కారణం మీ ప్రేమ, మీ కష్టం, మీ అంకితభావం. 
+మీరు మా కోసం చేసిన వాటికి జీవితాంతం కృతజ్ఞులమై ఉంటాము నాన్నగారు. 
+మీరు మన కుటుంబానికి కేవలం పెద్దవారు మాత్రమే కాదు, మా బలం, మా ప్రపంచం.
+</p>    
+      </div>
+      <p class="letter-sign">With All My Love, Your Daughters❤️</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MY HERO -->
+<section id="hero-cards">
+  <div class="container">
+    <p class="section-label reveal">Because of You</p>
+    <h2 class="section-title reveal">Why You Are My Hero</h2>
+    <div class="section-divider reveal"></div>
+    <div class="cards-grid">
+      <div class="hero-card reveal">
+        <span class="card-icon">🛡️</span>
+        <div class="card-title">My Protector</div>
+        <div class="card-desc">ప్రతి కష్టం, ప్రతి భయం ఎదురైనప్పుడు మీరు నాకు అండగా నిలబడ్డారు.మీ ప్రేమ, మీ రక్షణ వల్లనే నేను ధైర్యంగా ముందుకు సాగగలిగాను.</div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="card-icon">📚</span>
+        <div class="card-title">My First Teacher</div>
+        <div class="card-desc">పాఠశాలకు వెళ్లకముందే జీవితంలో నిజంగా ముఖ్యమైన విలువలను మీరు నేర్పించారు. 
+
+మీ బోధనలే నా జీవితానికి మార్గదర్శకం.</div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="card-icon">💪</span>
+        <div class="card-title">My Strength</div>
+        <div class="card-desc">నేను బలహీనంగా అనిపించిన ప్రతిసారి మీ బలం నాలో ధైర్యాన్ని నింపింది. 
+
+నేను ఎప్పుడూ ఓడిపోకుండా మీరు నన్ను ముందుకు నడిపించారు.</div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="card-icon">❤️</span>
+        <div class="card-title">My Biggest Supporter</div>
+        <div class="card-desc">నా ప్రతి కలలో, ప్రతి విజయానికి దారితీసే ప్రతి అడుగులో మీరు నన్ను ప్రోత్సహించారు. 
+
+మీ నమ్మకమే నా విజయానికి బలం.</div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="card-icon">🌟</span>
+        <div class="card-title">My Inspiration</div>
+        <div class="card-desc">మీ కష్టపడే తత్వం, మంచితనం, ప్రేమ, త్యాగం ప్రతిరోజూ నన్ను ప్రేరేపిస్తాయి. 
+
+మీలా మంచి మనిషిగా మారడమే నా లక్ష్యం.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="container">
+    <p class="section-label reveal">Through the Years</p>
+    <h2 class="section-title reveal">Memory Gallery</h2>
+    <div class="section-divider reveal"></div>
+  <div class="gallery-grid">
+
+  <div class="gallery-item">
+    <img src="image1.jpeg" class="contain-img" alt="">
+</div>
+
+<div class="gallery-item">
+    <img src="image5.jpeg" class="cover-img" alt="">
+</div>
+
+<div class="gallery-item">
+    <img src="image3.jpeg" class="contain-img" alt="">
+</div>
+
+<div class="gallery-item">
+    <img src="image4.jpeg" class="contain-img" alt="">
+</div>
+
+<div class="gallery-item">
+    <img src="image2.jpeg" class="cover-img" alt="">
+</div>
+
+<div class="gallery-item">
+    <img src="image6.jpeg" class="contain-img" alt="">
+</div>
+
+</div>
+</section>
+
+<!-- FLIP CARDS -->
+<section id="flip-cards">
+  <div class="container">
+    <p class="section-label reveal">Hover to Reveal</p>
+    <h2 class="section-title reveal">Things I Never Said Out Loud</h2>
+    <div class="section-divider reveal"></div>
+    <div class="flip-grid">
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"నేను నన్ను నమ్మలేనప్పుడు, మీరు నన్ను నమ్మారు."</p></div>
+        </div>
+      </div>
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"మీ కూతురిగా పుట్టడం నా గొప్ప అదృష్టం."</p></div>
+        </div>
+      </div>
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"నా ప్రతి విజయానికి కారణం మీరే."</p></div>
+        </div>
+      </div>
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"మా కుటుంబం కోసం మీరు చేసే ప్రతి కష్టాన్ని నేను గుర్తుంచుకుంటాను"</p></div>
+        </div>
+      </div>
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"మళ్లీ అవకాశం వస్తే, మీరే నా నాన్నగా కావాలి."</p></div>
+        </div>
+      </div>
+      <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="front-icon">🎁</span><span class="front-hint"> Tap to reveal</span></div>
+          <div class="flip-back"><p>"నాన్నగారు, నా కోసం చేసిన ప్రతి త్యాగానికి ధన్యవాదాలు. మీ ప్రేమ, కష్టం నా జీవితానికి అమూల్యమైన వరం"</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <p class="section-label reveal">Our Story</p>
+    <h2 class="section-title reveal">Our Journey Together</h2>
+    <div class="section-divider reveal"></div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <p class="tl-year">Early Days</p>
+          <p class="tl-heading">👶 Childhood</p>
+          <p class="tl-desc">You held my tiny hand and taught me my first steps. Your arms were always the safest place in the world.</p>
+        </div>
+        <div class="tl-dot">👶</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <p class="tl-year">Growing Up</p>
+          <p class="tl-heading">🏫 School Days</p>
+          <p class="tl-desc">You dropped me off with a smile every morning and made sure every evening felt like home.</p>
+        </div>
+        <div class="tl-dot">🏫</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <p class="tl-year">Finding My Way</p>
+          <p class="tl-heading">🎓 College</p>
+          <p class="tl-desc">You let me fly while always being my ground. Your support made every challenge feel possible.</p>
+        </div>
+        <div class="tl-dot">🎓</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <p class="tl-year">The Road Ahead</p>
+          <p class="tl-heading">🚀 My Dreams</p>
+          <p class="tl-desc">Every dream I chase carries a piece of your strength. I will make you proud, Nannagaru.</p>
+        </div>
+        <div class="tl-dot">🚀</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <p class="tl-year">Always & Forever</p>
+          <p class="tl-heading">❤️ Forever Together</p>
+          <p class="tl-desc">No matter where life leads, you will always be my home, my hero, and my heart.</p>
+        </div>
+        <div class="tl-dot">❤️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL MESSAGE -->
+<section id="special-message">
+  <div class="container">
+    <p class="special-quote reveal">"If I become successful one day, it will be because of the values, the strength, and the love you poured into me every single day of my life."</p>
+    <p class="special-author reveal">— Your Daughters ❤️</p>
+  </div>
+</section>
+
+<!-- SURPRISE -->
+<section id="surprise">
+  <div class="container" style="text-align:center;">
+    <p class="section-label reveal">Something Special</p>
+    <h2 class="section-title reveal">Just For You, Nannagaru</h2>
+    <div class="section-divider reveal"></div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--text-soft);font-style:italic;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;" class="reveal">A small gift from my heart — press gently.</p>
+    <button class="surprise-btn reveal" id="surprise-btn" onclick="showSurprise()">
+      Click Here Nannagaru
+    </button>
+     <div id="surprise-msg">
+      <!-- Canvas for petal particles -->
+      <canvas id="petal-canvas"></canvas>
+      <!-- Radial glow bloom -->
+      <div class="bloom-ring" id="bloom1"></div>
+      <div class="bloom-ring" id="bloom2"></div>
+      <div class="bloom-ring" id="bloom3"></div>
+      <!-- Message -->
+      <div class="reveal-card" id="reveal-card">
+        <div class="reveal-ornament">— ✦ —</div>
+        <p class="reveal-main">Love You, Nannagaru</p>
+        <p class="reveal-sub">Thank you for every sunrise you gave me, every storm you sheltered me from, and every single moment in between.</p>
+        <div class="reveal-signature">With all my heart — Ambika & Chinnu</div>
+        <div class="reveal-ornament" style="margin-top:1.5rem;">— ✦ —</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-love">Made with Endless Love by Your Daughters ❤️</p>
+  <p class="footer-sub">Happy Father's Day Nannagaru &nbsp;·&nbsp; June 2026</p>
+  <div style="margin-top:1.5rem;width:60px;height:2px;background:linear-gradient(to right,var(--crimson),var(--gold));margin-left:auto;margin-right:auto;border-radius:2px;"></div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// LOADING
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loading').classList.add('hide');
+  }, 2200);
+});
+
+// PETALS
+const petalsContainer = document.getElementById('petals');
+function createPetal() {
+  const p = document.createElement('div');
+  p.className = 'petal';
+  const size = Math.random() * 10 + 6;
+  p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}vw;animation-duration:${Math.random()*8+6}s;animation-delay:${Math.random()*5}s;background:rgba(${200+Math.random()*55},${100+Math.random()*50},${100+Math.random()*50},${0.2+Math.random()*0.3})`;
+  petalsContainer.appendChild(p);
+  setTimeout(() => p.remove(), 14000);
+}
+setInterval(createPetal, 600);
+
+// NAV
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+});
+
+// MOBILE MENU
+document.getElementById('hamburger').onclick = () => document.getElementById('mobile-menu').classList.add('open');
+document.getElementById('close-menu').onclick = () => document.getElementById('mobile-menu').classList.remove('open');
+function closeMob() { document.getElementById('mobile-menu').classList.remove('open'); }
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+reveals.forEach(r => observer.observe(r));
+
+// SCROLL TO LETTER
+function scrollToLetter() {
+  document.getElementById('letter').scrollIntoView({ behavior: 'smooth' });
+}
+
+// LETTER LINES
+const card = document.querySelector('.letter-card');
+const linesDiv = document.getElementById('letter-lines');
+for (let i = 0; i < 20; i++) {
+  const line = document.createElement('div');
+  line.className = 'letter-line';
+  line.style.top = (8 + i * 34) + 'px';
+  linesDiv.appendChild(line);
+}
+
+// GALLERY
+const memories = [
+  { label: 'First Steps', emoji: '👶' },
+  { label: 'School Days', emoji: '🏫' },
+  { label: 'Celebrations', emoji: '🎉' },
+  { label: 'Family Time', emoji: '👨‍👩‍👧‍👧' },
+  { label: 'Our Smiles', emoji: '😊' },
+  { label: 'Adventures', emoji: '🌍' },
+  { label: 'Special Days', emoji: '❤️' },
+  { label: 'Together', emoji: '🤝' }
+];
+const grid = document.getElementById('gallery-grid');
+memories.forEach((m, i) => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item reveal';
+  const hues = [0, 10, 350, 5, 15, 345, 355, 360];
+  item.innerHTML = `
+    <div class="gallery-placeholder" style="background:linear-gradient(135deg,hsl(${hues[i]},65%,${30+i*3}%) 0%,hsl(${hues[i]+10},70%,${20+i*2}%) 100%)">
+      <span>${m.emoji}</span>
+      <p style="font-size:0.7rem;margin-top:0.3rem;">img src="p.jpg"</p>
+    </div>
+    <div class="overlay"><p>${m.label} ❤️</p></div>
+  `;
+  item.addEventListener('click', () => {
+    document.getElementById('lb-text').textContent = m.label + ' — A memory to treasure forever ❤️';
+    document.getElementById('lightbox').classList.add('show');
+  });
+  grid.appendChild(item);
+});
+
+// LIGHTBOX
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === e.currentTarget || e.target.id === 'lightbox-close') {
+    e.currentTarget.classList.remove('show');
+  }
+});
+
+  grid.appendChild(item);
+  // If the scroll reveal observer exists, observe this newly added reveal item
+  try { if (typeof observer !== 'undefined' && observer && item.classList.contains('reveal')) observer.observe(item); } catch (e) { /* ignore if observer not available */ }
+let petalAnim = null;
+function startPetalRain() {
+  const canvas = document.getElementById('petal-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const COLORS = ['#C0392B','#E74C3C','#922B21','#C9A84C','#FDECEF','#F5D98B','#E8A0A0','#FFF0EE'];
+  const petals = [];
+
+  function makePetal() {
+    return {
+      x: Math.random() * canvas.width,
+      y: -20,
+      size: 5 + Math.random() * 10,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      speedY: 1.2 + Math.random() * 2.2,
+      speedX: (Math.random() - 0.5) * 1.2,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.08,
+      opacity: 0.7 + Math.random() * 0.3,
+      wobble: Math.random() * Math.PI * 2,
+      wobbleSpeed: 0.02 + Math.random() * 0.03,
+      shape: Math.random() > 0.5 ? 'ellipse' : 'petal'
+    };
+  }
+
+  function drawPetal(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+    ctx.globalAlpha = p.opacity;
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    if (p.shape === 'ellipse') {
+      ctx.ellipse(0, 0, p.size * 0.5, p.size, 0, 0, Math.PI * 2);
+    } else {
+      // teardrop petal
+      ctx.moveTo(0, -p.size);
+      ctx.bezierCurveTo(p.size * 0.7, -p.size * 0.4, p.size * 0.6, p.size * 0.6, 0, p.size * 0.8);
+      ctx.bezierCurveTo(-p.size * 0.6, p.size * 0.6, -p.size * 0.7, -p.size * 0.4, 0, -p.size);
+    }
+    ctx.fill();
+    ctx.restore();
+  }
+
+  let frame = 0;
+  function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (frame < 200) petals.push(makePetal());
+    frame++;
+    for (let i = petals.length - 1; i >= 0; i--) {
+      const p = petals[i];
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(p.wobble) * 0.6;
+      p.rotation += p.rotSpeed;
+      p.wobble += p.wobbleSpeed;
+      if (frame > 200) p.opacity -= 0.003;
+      if (p.y > canvas.height + 20 || p.opacity <= 0) { petals.splice(i, 1); continue; }
+      drawPetal(p);
+    }
+    if (petals.length > 0 || frame < 220) {
+      petalAnim = requestAnimationFrame(loop);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+  loop();
+}
+
+// BLOOM RINGS
+function triggerBloom() {
+  [1,2,3].forEach((n, i) => {
+    const el = document.getElementById('bloom' + n);
+    setTimeout(() => {
+      el.style.transition = 'transform 1.4s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translate(-50%,-50%) scale(1)';
+      setTimeout(() => {
+        el.style.transition = 'opacity 1.2s ease';
+        el.style.opacity = '0';
+        setTimeout(() => { el.style.transform = 'translate(-50%,-50%) scale(0)'; }, 1300);
+      }, 900);
+    }, i * 180);
+  });
+}
+
+// SURPRISE
+var surpriseFired = false;
+
+function showSurprise() {
+  if (surpriseFired) return;
+  surpriseFired = true;
+
+  const btn = document.getElementById('surprise-btn');
+
+  btn.style.opacity = '0.5';
+  btn.style.pointerEvents = 'none';
+  btn.innerHTML = '❤️ For My Nannagaru ❤️';
+
+  const msg = document.getElementById('surprise-msg');
+  msg.classList.add('show');
+
+  triggerBloom();
+  startPetalRain();
+
+  setTimeout(() => {
+    document.getElementById('reveal-card').classList.add('in');
+  }, 400);
+}
+// DARK MODE
+const toggle = document.getElementById('dark-toggle');
+
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    toggle.textContent =
+        document.body.classList.contains('dark')
+        ? '☀️'
+        : '🌙';
+});
+
+// MOBILE: tap flip cards
+document.querySelectorAll('.flip-container').forEach(fc => {
+  fc.addEventListener('touchend', e => {
+    e.preventDefault();
+    fc.classList.toggle('flipped');
+  });
+});
+</script>
+</body>
+</html>
